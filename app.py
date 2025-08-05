@@ -55,9 +55,6 @@ st.dataframe(filtered_df[['Title', 'Popularity', 'Vote_Count']], use_container_w
 st.markdown("---")
 st.markdown("### 🍿 Top 5 Popular Movies (Based on Filter)")
 
-st.markdown("---")
-st.caption("© 2025 CineScope | 👨‍💻 Developed by **Ankit Kumar**")
-
 top5 = filtered_df[['Title', 'Popularity']].sort_values(by='Popularity', ascending=False).head(5)
 
 if not top5.empty:
@@ -67,5 +64,11 @@ if not top5.empty:
     st.pyplot(fig)
 else:
     st.warning("No data available for the selected filters.")
+
+st.markdown("---")
+st.caption("© 2025 CineScope | 👨‍💻 Developed by **Ankit Kumar**")
+
+
+
 
 
