@@ -58,9 +58,10 @@ st.markdown("### 🍿 Top 5 Popular Movies (Based on Filter)")
 top5 = filtered_df[['Title', 'Popularity']].sort_values(by='Popularity', ascending=False).head(5)
 
 if not top5.empty:
-    fig, ax = plt.subplots(figsize=(4, 4))  # 👈 Chart made smaller
+    fig, ax = plt.subplots(figsize=(4, 4))  
     ax.pie(top5['Popularity'], labels=top5['Title'], autopct='%1.1f%%', startangle=140)
     ax.axis('equal')
     st.pyplot(fig)
 else:
     st.warning("No data available for the selected filters.")
+
